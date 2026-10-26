@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dorm Marketplace</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">DM</div>
+    <div><p class="eyebrow">CAMPUS EXCHANGE</p><h1>Dorm Marketplace</h1></div>
+    <button id="resetBtn" class="ghost">Reset demo data</button>
+  </header>
+  <main class="shell">
+    <section class="hero">
+      <div><p class="eyebrow accent">THE DAY-ONE MVP</p><h2>Good stuff deserves a second room.</h2><p>List what you no longer need. Claim it for free or a small price. Meet on campus and hand it off.</p></div>
+      <div class="hero-stat"><strong id="availableCount">0</strong><span>available today</span></div>
+    </section>
+    <div id="notice" class="notice" role="status"></div>
+    <section class="workspace">
+      <div class="catalog-column"><div class="section-heading"><div><p class="eyebrow">BROWSE LISTINGS</p><h3>Available near you</h3></div><button id="refreshBtn" class="text-button">Refresh</button></div><div id="items" class="items"></div></div>
+      <aside class="side-column">
+        <div class="panel"><p class="eyebrow">SELL SOMETHING</p><h3>New listing</h3><form id="listingForm">
+          <label>Item name<input name="title" placeholder="e.g. Folding chair" required /></label>
+          <label>Description<textarea name="description" placeholder="Condition, pickup notes..." required></textarea></label>
+          <div class="two-up"><label>Price ($)<input name="price" type="number" min="0" value="0" required /></label><label>Dorm<input name="dorm" placeholder="West Hall" required /></label></div>
+          <label>Your name<input name="seller" placeholder="Alex Johnson" required /></label><button class="primary" type="submit">Publish listing</button>
+        </form></div>
+        <div class="panel scenario-panel"><p class="eyebrow">BUILT FOR REAL TUESDAYS</p><h3>State rules</h3><ul><li><b>One winner:</b> the first claim atomically reserves an item.</li><li><b>Ghost buyer:</b> a reservation expires after 30 seconds.</li><li><b>Hallway sale:</b> sellers can mark sold or remove instantly.</li></ul></div>
+      </aside>
+    </section>
+  </main>
+  <template id="itemTemplate"><article class="item-card"><div class="card-top"><span class="tag"></span><span class="price"></span></div><h4 class="title"></h4><p class="description"></p><div class="meta"><span class="seller"></span><span class="dorm"></span></div><div class="claim-area"></div></article></template>
+  <script src="/app.js"></script>
+</body>
+</html>
